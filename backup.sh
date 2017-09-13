@@ -15,6 +15,7 @@ echo "$(get_date) [Step 1/3] Running mongodump"
 mongodump --quiet -h $MONGO_HOST -p $MONGO_PORT
 
 echo "$(get_date) [Step 2/3] Creating tar archive"
+mkdir dump
 tar -zcvf $OUT dump/
 rm -rf dump/
 
