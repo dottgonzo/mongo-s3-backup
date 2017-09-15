@@ -19,8 +19,8 @@ mkdir dump
 tar -zcvf $OUT dump/
 rm -rf dump/
 
-echo "$(get_date) [Step 3/3] Uploading archive to S3"
-/usr/local/bin/aws s3 cp $OUT s3://$S3_BUCKET/$S3_PATH
+echo "$(get_date) [Step 3/3] Uploading archive to S3 $S3_PATH"
+/usr/local/bin/aws s3 cp $OUT "s3://$S3_BUCKET/$S3_PATH"
 rm $OUT
 
 echo "$(get_date) Mongo backup completed successfully"
